@@ -1,0 +1,17 @@
+<%= form_for(@mardi) do |f| %>
+  <% if @mardi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mardi.errors.count, "error") %> prohibited this mardi from being saved:</h2>
+
+      <ul>
+      <% @mardi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

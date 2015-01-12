@@ -1,0 +1,2 @@
+module MardisHelper
+end
