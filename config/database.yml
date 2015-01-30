@@ -7,11 +7,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: trr-development
+  database: brandy-development
   pool: 5
   timeout: 5000
-  username: postgres
-  password: password1
+  host: 127.0.0.1
+  username: brandygras
+  password: brandygras
 
 development:
   <<: *default

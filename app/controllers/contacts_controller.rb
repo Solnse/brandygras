@@ -19,6 +19,8 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
+    @contact = Contact.find(params[:id])
+
   end
 
   # POST /contacts
@@ -69,6 +71,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:fname, :lname, :comment, :address, :address2, :city, :state, :zip)
+      params.require(:contact).permit(:fname, :lname, :comment, :address, :address2, :city, :state, :zip, :email, :guests)
     end
 end
