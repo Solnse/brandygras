@@ -1,10 +1,16 @@
 = form_for @contact do |f|
+  - guest_choice = [['Me!', 0],['+1', 1], ['+2', 2], ['+3', 3]]
   %table
     %tr
       %td{:width => "140px;"}
         = f.label "First Name"
       %td
         = f.text_field :fname, :required => true
+    %tr
+      %td
+        = f.label "Bringing somebody?"
+      %td
+        = f.select(:guests, options_for_select(guest_choice), :required => true)
     %tr
       %td{:width => "140px;"}
         = f.label "Last Name"
@@ -15,15 +21,9 @@
         = f.label "Email"
       %td
         = f.email_field :email, :required => true
-  %table
     %tr
       %td
         = f.label "Bringing Something?"
-        = f.text_field :comment, :required => false, :size => 25
-    %tr
       %td
-        = f.label "Bringing somebody?"
-        - guest_choice = [['Me!', 0],['+1', 1], ['+2', 2], ['+3', 3]]
-        = select_tag(:guests, options_for_select(guest_choice), :required => true)
-
+        = f.text_field :comment, :required => false, :size => 25
   = f.submit 'Send R.S.V.P'

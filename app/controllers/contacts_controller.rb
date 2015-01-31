@@ -70,6 +70,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:fname, :lname, :comment, :address, :address2, :city, :state, :zip, :email, :guests)
+      params.require(:contact).permit(:fname, :lname, :comment, :email, :guests)
     end
 end
