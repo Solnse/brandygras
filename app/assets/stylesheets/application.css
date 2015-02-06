@@ -18,3 +18,9 @@ body {
   background-color: black;
   color: white;
 }
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
